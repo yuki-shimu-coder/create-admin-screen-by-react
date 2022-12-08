@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./reactApp:/usr/src/app # ローカルをコンテナ内にマウント
+    ports:
+      - "3000:3000"
+    stdin_open: true 
