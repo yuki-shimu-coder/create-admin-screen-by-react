@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRef } from 'react';
 import './App.css';
 
 import { Table } from './components/Table';
@@ -16,12 +17,12 @@ function App() {
       <div className="bg-dark" style={{ minHeight: '100vh' }}>
         <div className="p-5">
           <Table
+            columns={COLUMNS}
+            rows={ROWS}
             bordered
             hover
             striped
             variant="dark"
-            columns={COLUMNS}
-            rows={ROWS}
           />
         </div>
       </div>
