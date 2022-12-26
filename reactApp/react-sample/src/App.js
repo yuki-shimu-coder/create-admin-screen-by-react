@@ -1,28 +1,34 @@
-import React from 'react';
-import { useRef } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import { Table } from './components/Table';
 
-const COLUMNS = ['No.', 'Name', 'Age'];
-const ROWS = [
-  [1, 'one', 10],
-  [2, 'two', 8],
-  [3, 'three', 7],
-];
+axios.defaults.headers.get['Content-Type'] = 'application/json';
+axios.defaults.headers.get.Accept = 'application/json';
+axios.defaults.baseURL = 'http://localhost:3001/';
+
+const COLUMNS = ['id', 'name'];
 
 function App() {
+
+  const [cats, setCats] = useState([]);
+
+  useEffect(() => {
+    axios.get('/cats').then(response => setCats(response.data));
+  }, []);
+
   return (
     <>
       <div className="bg-dark" style={{ minHeight: '100vh' }}>
         <div className="p-5">
           <Table
-            columns={COLUMNS}
-            rows={ROWS}
             bordered
             hover
             striped
             variant="dark"
+            columns={COLUMNS}
+            rows={cats.map(cat => [cat.id, cat.name])}
           />
         </div>
       </div>

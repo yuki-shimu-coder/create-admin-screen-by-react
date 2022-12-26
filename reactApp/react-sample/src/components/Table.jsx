@@ -34,3 +34,5 @@ export const Table = React.forwardRef(({
     </BootstrapTable>
   )
 })
+
+export default Table;
