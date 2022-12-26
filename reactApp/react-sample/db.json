@@ -2,15 +2,18 @@
   "cats": [
     {
       "id": 1,
-      "name": "Norwegian Forest Cat"
+      "name": "Norwegian Forest Cat",
+      "age":1
     },
     {
       "id": 2,
-      "name": "Selkirk Rex"
+      "name": "Selkirk Rex",
+      "age":2
     },
     {
       "id": 3,
-      "name": "Munchkin"
+      "name": "Munchkin",
+      "age":3
     }
   ]
 }

@@ -8,7 +8,7 @@ axios.defaults.headers.get['Content-Type'] = 'application/json';
 axios.defaults.headers.get.Accept = 'application/json';
 axios.defaults.baseURL = 'http://localhost:3001/';
 
-const COLUMNS = ['id', 'name'];
+const COLUMNS = ['id', 'name', 'age'];
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
             striped
             variant="dark"
             columns={COLUMNS}
-            rows={cats.map(cat => [cat.id, cat.name])}
+            rows={cats.map(cat => [cat.id, cat.name, cat.age])}
           />
         </div>
       </div>
