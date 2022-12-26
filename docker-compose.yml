@@ -8,4 +8,5 @@ services:
       - ./reactApp:/usr/src/app # ローカルをコンテナ内にマウント
     ports:
       - "3000:3000"
+      - "3001:3001"
     stdin_open: true 
