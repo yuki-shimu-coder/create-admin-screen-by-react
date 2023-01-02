@@ -5,6 +5,15 @@ import { Spinner } from 'react-bootstrap';
 import './App.css';
 import Table from './components/Table';
 
+/**
+ * axios
+ * 参考 : Axios を使用してリクエスト ヘッダーを設定する
+ * https://blog.logrocket.com/using-axios-set-request-headers/
+ * 
+ * 参考 : [HTTPヘッダー]AcceptとContent-Typeについて
+ * https://qiita.com/satoru_pripara/items/89fff277db5212ec37e1
+ */
+/** 'content-type' = 'application/json' は、コンテンツが json 形式である必要があることを意味する */
 axios.defaults.headers.get['Content-Type'] = 'application/json';
 axios.defaults.headers.get.Accept = 'application/json';
 axios.defaults.baseURL = 'http://0.0.0.0:3001/';
