@@ -6,6 +6,7 @@ const filter = (row, columnId, value) => {
   return String(row.getValue(columnId)).indexOf(value) !== -1;
 }
 
+/** 検索エリアのコンポーネント */
 const DebouncedInput = ({
   value: initialValue,
   onChange,
