@@ -18,6 +18,10 @@ axios.defaults.headers.get['Content-Type'] = 'application/json';
 axios.defaults.headers.get.Accept = 'application/json';
 axios.defaults.baseURL = 'http://0.0.0.0:3001/';
 
+/**
+ * テーブルの列を指定
+ * オブジェクトを追加することで列を追加することができます
+ */
 const COLUMNS = [
   {
     accessorKey: 'id',
@@ -33,11 +37,18 @@ const COLUMNS = [
   },
 ];
 
+/**
+ * valuesの値がnullじゃないとき、Tableコンポーネントにデータを渡してレンダリングする
+ * @param {*} values ステート catsの値が格納 テーブルでは行データに該当する
+ * @param {*} setState catsのセット関数が格納
+ * @returns 
+ */
 const Pets = ({
   values,
   setState,
 }) => {
 
+  // 初回ロード時、非同期通信でデータを取得し、catsに値を格納
   if (values === null) {
     if (setState) {
       throw axios.get('/cats').then(response => setState(response.data));
