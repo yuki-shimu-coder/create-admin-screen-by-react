@@ -55,6 +55,7 @@ const Pets = ({
     }
   }
 
+  // valuesに値が格納されたら（catsに値がセットされたら）,テーブルコンポーネントをレンダリング
   return (
     <Table
       bordered
